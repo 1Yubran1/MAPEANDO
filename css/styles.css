@@ -1,7 +1,7 @@
 #map {
     width: 800px;
     height: 600px;
-    background-image: url('mapa.jpg'); /* Reemplaza 'mapa.jpg' con la imagen de tu mapa */
+    background-image: url('img/MAPEANDO/MAPA FONDO1.png'); /* Reemplaza 'mapa.jpg' con la imagen de tu mapa */
     background-size: cover;
     position: relative;
   }
