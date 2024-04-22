@@ -1,0 +1,16 @@
+#map {
+    width: 800px;
+    height: 600px;
+    background-image: url('mapa.jpg'); /* Reemplaza 'mapa.jpg' con la imagen de tu mapa */
+    background-size: cover;
+    position: relative;
+  }
+  
+  .piece {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.5); /* Color de fondo semitransparente */
+    border: 1px solid #000;
+    position: absolute;
+  }
+  
