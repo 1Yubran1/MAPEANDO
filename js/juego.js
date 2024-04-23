@@ -1,17 +1,19 @@
 var piezas = document.getElementsByClassName('movil');
-var tamWidth  = [50, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 50];
-var tamHeight = [50, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 50];
+var tamWidth  = [50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50];
+var tamHeight = [50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50];
+var posicionesInicialesX = [0,    50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 0, 50, 100, 150, 200, 350, 400, 450, 500, 550];
+var posicionesInicialesY = [600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 600, 700, 700, 700, 700, 700, 700, 700, 700, 700, 700];
+
 
 for (var i = 0; i < piezas.length; i++) {
   piezas[i].setAttribute("width", tamWidth[i]);
   piezas[i].setAttribute("height", tamHeight[i]);
-  piezas[i].setAttribute("x", Math.floor(Math.random() * 100 + 1));
-  piezas[i].setAttribute("y", Math.floor(Math.random() * 100 + 1));
+  piezas[i].setAttribute("x", posicionesInicialesX[i]);
+  piezas[i].setAttribute("y", posicionesInicialesY[i]);
   piezas[i].addEventListener("mousedown", function(evt) {
     seleccionarElemento(evt);
   });
 }
-
 
 var elementSelect = null;
 var currentX = 0;
@@ -47,11 +49,11 @@ function moverElemento(evt) {
 }
 
 function deseleccionarElemento(evt) {
-  testing();
   if (elementSelect) {
     elementSelect.removeEventListener("mousemove", moverElemento);
     elementSelect.removeEventListener("mouseup", deseleccionarElemento);
     elementSelect = null;
+    iman(); // Llamar a la función iman() después de soltar el elemento
   }
 }
 
@@ -66,8 +68,8 @@ function reordenar(evt) {
   return entorno.lastChild.firstChild;
 }
 
-var origX = [200];
-var origY = [100];
+var origX = posicionesInicialesX.slice(); // Copiar el arreglo de posiciones iniciales
+var origY = posicionesInicialesY.slice(); // Copiar el arreglo de posiciones iniciales
 
 function iman() {
   for (var i = 0; i < piezas.length; i++) {
@@ -91,7 +93,7 @@ function testing() {
       bienUbicada = bienUbicada + 1;
     }
   }
-  if (bienUbicada === 22) {
+  if (bienUbicada === 10) {
     confeti[0].play();
   }
 }
