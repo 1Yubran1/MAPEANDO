@@ -1,12 +1,10 @@
 var piezas = document.getElementsByClassName('movil');
-var tamWidth  = [50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50];
-var tamHeight = [50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50];
+var tamWidth  = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100];
+var tamHeight = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100];
 
 for (var i = 0; i < piezas.length; i++) {
   piezas[i].setAttribute("width", tamWidth[i]);
   piezas[i].setAttribute("height", tamHeight[i]);
-  piezas[i].setAttribute("x", 100);
-  piezas[i].setAttribute("y", 500);
   piezas[i].setAttribute("x", Math.floor(Math.random() * 100 + 1));
   piezas[i].setAttribute("y", Math.floor(Math.random() * 100 + 1));
   piezas[i].addEventListener("mousedown", function(evt) {

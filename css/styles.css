@@ -14,3 +14,32 @@
     position: absolute;
   }
   
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Para que el confeti no desborde */
+    background-color: #f0f0f0;
+}
+
+.confeti {
+    width: 20px; /* Ancho del rectángulo */
+    height: 10px; /* Altura del rectángulo */
+    position: absolute;
+    animation: fall 5s infinite linear; /* Animación de caída */
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 1;
+    }
+}
+
+#entorno{
+    display: block;
+    margin: 0 auto;
+}
