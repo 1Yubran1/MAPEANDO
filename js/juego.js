@@ -1,33 +1,14 @@
-/*var piezas = document.getElementsByClassName('movil');
-var tamWidth  = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100];
-var tamHeight = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100];
-
-var offsetX = 0; // Offset horizontal inicial
-var offsetY = 500; // Offset vertical
-
-for (var i = 0; i < piezas.length; i++) {
-  piezas[i].setAttribute("width", tamWidth[i]);
-  piezas[i].setAttribute("height",tamHeight[i]);
-  piezas[i].setAttribute("x", offsetX);
-  piezas[i].setAttribute("y", offsetY);
-  offsetX += tamWidth[i] + 1; // Sumamos el ancho de la imagen más un margen
-  piezas[i].addEventListener("mousedown", function(evt) {
-    seleccionarElemento(evt);
-  });
-}*/
-
-
 var piezas = document.getElementsByClassName('movil');
-var tamWidth  = [50, 40, 10, 150, 100, 50, 100, 200, 60, 50, 100, 100, 110, 160, 100, 120, 30, 300, 200, 100, 100, 52];
-var tamHeight = [50, 40, 10, 150, 100, 50, 100, 200, 60, 50, 100, 100, 110, 150, 100, 100, 30, 295, 190, 100, 90, 52];
+var tamWidth  = [50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50];
+var tamHeight = [50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50];
 
 for (var i = 0; i < piezas.length; i++) {
   piezas[i].setAttribute("width", tamWidth[i]);
   piezas[i].setAttribute("height", tamHeight[i]);
   piezas[i].setAttribute("x", 100);
   piezas[i].setAttribute("y", 500);
-  //piezas[i].setAttribute("x", Math.floor(Math.random() * 100 + 1));
-  //piezas[i].setAttribute("y", Math.floor(Math.random() * 100 + 1));
+  piezas[i].setAttribute("x", Math.floor(Math.random() * 100 + 1));
+  piezas[i].setAttribute("y", Math.floor(Math.random() * 100 + 1));
   piezas[i].addEventListener("mousedown", function(evt) {
     seleccionarElemento(evt);
   });
