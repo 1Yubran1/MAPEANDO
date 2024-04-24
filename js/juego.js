@@ -97,43 +97,20 @@ function testing() {
   }
 }
 
-// Definir las variables para controlar si los modales ya se han mostrado
 
-var modal1Mostrado = false;
-var modal2Mostrado = false;
+ // Espera a que el DOM esté completamente cargado
+ document.addEventListener('DOMContentLoaded', function () {
+  // Obtiene una lista de todos los elementos <g> con la clase "padre"
+  var gElements = document.querySelectorAll('.padre');
 
-// Escuchar el evento de deselección de la imagen
-document.addEventListener("mouseup", function(evt) {
-  // Verificar si el evento ocurrió fuera de la imagen y el primer modal aún no se ha mostrado
-  if (evt.target.classList.contains('movil') && !modal1Mostrado) {
-    mostrarModal1();
-    modal1Mostrado = true; // Establecer la bandera a true para indicar que el primer modal se ha mostrado
-  }
-  // Verificar si el evento ocurrió fuera de la imagen y el segundo modal aún no se ha mostrado
-  else if (evt.target.classList.contains('movil') && !modal2Mostrado) {
-    mostrarModal2();
-    modal2Mostrado = true; // Establecer la bandera a true para indicar que el segundo modal se ha mostrado
-  }
+  // Itera sobre todos los elementos <g>
+  gElements.forEach(function (element, index) {
+    // Agrega un evento de clic a cada elemento <g>
+    element.addEventListener('click', function () {
+      // Muestra el modal correspondiente según el índice del elemento
+      var modalId = "completadoModal" + (index + 1);
+      var modal = new bootstrap.Modal(document.getElementById(modalId));
+      modal.show();
+    });
+  });
 });
-
-// Función para mostrar el primer modal
-function mostrarModal1() {
-  var modal = new bootstrap.Modal(document.getElementById('completadoModal'));
-  modal.show();
-
-  // Agregar un evento al modal para restablecer la bandera cuando se cierre el modal
-  modal.addEventListener('hidden.bs.modal', function () {
-    modal1Mostrado = false; // Establecer la bandera a false cuando se cierre el modal
-  });
-}
-
-// Función para mostrar el segundo modal
-function mostrarModal2() {
-  var modal = new bootstrap.Modal(document.getElementById('completadoModal2'));
-  modal.show();
-
-  // Agregar un evento al modal para restablecer la bandera cuando se cierre el modal
-  modal.addEventListener('hidden.bs.modal', function () {
-    modal2Mostrado = false; // Establecer la bandera a false cuando se cierre el modal
-  });
-}
