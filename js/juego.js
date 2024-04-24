@@ -96,17 +96,32 @@ function testing() {
     confeti[0].play();
   }
 }
-
-// Definir las variables para controlar si los modales ya se han mostrado
+/*
+/// Definir banderas para controlar si los modales ya se han mostrado
 var modal1Mostrado = false;
 var modal2Mostrado = false;
 
-// Escuchar el evento de deselección de la imagen para el primer modal
+// Aquí va el código para mostrar el modal cuando se deselecciona la imagen
 document.addEventListener("mouseup", function(evt) {
-  // Verificar si el evento ocurrió fuera de la imagen y el modal aún no se ha mostrado
-  if (evt.target.classList.contains('movil') && !modal1Mostrado) {
+  // Verificar si el evento ocurrió fuera de las imágenes
+  var isOutside = true;
+  for (var i = 0; i < piezas.length; i++) {
+    if (evt.target === piezas[i] || piezas[i].contains(evt.target)) {
+      isOutside = false;
+      break;
+    }
+  }
+  
+  // Si el evento ocurrió fuera de las imágenes y el primer modal aún no se ha mostrado, mostrar el primer modal
+  if (isOutside && !modal1Mostrado) {
     mostrarModal1();
-    modal1Mostrado = true; // Establecer la bandera a true para indicar que el modal se ha mostrado
+    modal1Mostrado = true; // Establecer la bandera a true para indicar que el primer modal se ha mostrado
+  }
+
+  // Si el evento ocurrió fuera de las imágenes y el segundo modal aún no se ha mostrado, mostrar el segundo modal
+  if (isOutside && !modal2Mostrado) {
+    mostrarModal2();
+    modal2Mostrado = true; // Establecer la bandera a true para indicar que el segundo modal se ha mostrado
   }
 });
 
@@ -121,15 +136,6 @@ function mostrarModal1() {
   });
 }
 
-// Escuchar el evento de deselección de la imagen para el segundo modal
-document.addEventListener("mouseup", function(evt) {
-  // Verificar si el evento ocurrió fuera de la imagen y el modal aún no se ha mostrado
-  if (evt.target.classList.contains('movil') && !modal2Mostrado) {
-    mostrarModal2();
-    modal2Mostrado = true; // Establecer la bandera a true para indicar que el modal se ha mostrado
-  }
-});
-
 // Función para mostrar el segundo modal
 function mostrarModal2() {
   var modal = new bootstrap.Modal(document.getElementById('completadoModal2'));
@@ -140,4 +146,50 @@ function mostrarModal2() {
     modal2Mostrado = false; // Establecer la bandera a false cuando se cierre el modal
   });
 }
+*/
+
+// Definir las variables para controlar si los modales ya se han mostrado
+var modal1Mostrado = false;
+var modal2Mostrado = false;
+
+// Escuchar el evento de deselección de la imagen para el primer modal
+document.addEventListener("mouseup", function(evt) {
+  // Verificar si el evento ocurrió fuera de la imagen y el modal aún no se ha mostrado
+  if (evt.target.classList.contains('movil') && !modal1Mostrado) {
+    mostrarModal1();
+    modal1Mostrado = true; // Establecer la bandera a true para indicar que el modal se ha mostrado
+  }
+  // Función para mostrar el primer modal
+function mostrarModal1() {
+  var modal = new bootstrap.Modal(document.getElementById('completadoModal'));
+  modal.show();
+
+  // Agregar un evento al modal para restablecer la bandera cuando se cierre el modal
+  modal.addEventListener('hidden.bs.modal', function () {
+    modal1Mostrado = true; // Establecer la bandera a false cuando se cierre el modal
+  });
+}
+
+});
+
+
+// Escuchar el evento de deselección de la imagen para el segundo modal
+document.addEventListener("mouseup", function(evt) {
+  // Verificar si el evento ocurrió fuera de la imagen y el modal aún no se ha mostrado
+  if (evt.target.classList.contains('movil') && !modal2Mostrado) {
+    mostrarModal2();
+    modal2Mostrado = true; // Establecer la bandera a true para indicar que el modal se ha mostrado
+  }
+  // Función para mostrar el segundo modal
+function mostrarModal2() {
+  var modal = new bootstrap.Modal(document.getElementById('completadoModal2'));
+  modal.show();
+
+  // Agregar un evento al modal para restablecer la bandera cuando se cierre el modal
+  modal.addEventListener('hidden.bs.modal', function () {
+    modal2Mostrado = true; // Establecer la bandera a false cuando se cierre el modal
+  });
+}
+
+});
 
