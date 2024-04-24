@@ -7,7 +7,7 @@
 <style>
   /* Estilo para el cuerpo de la página */
   body {
-    background-image: url('img/MAPEANDO/FONDO1.png'); /* Ruta de la imagen de fondo */
+    background-image: url('/img/MAPEANDO/FONDO1.png'); /* Ruta de la imagen de fondo */
     background-size: cover; /* Cubre todo el tamaño del cuerpo */
     background-position: center; /* Centra la imagen */
     /* Estilos para los fuegos artificiales */
@@ -33,11 +33,11 @@
     --finalSize: 45vmin;
     --particleSize: 0.3vmin;
     --color1: yellow;
-    --color2: red;
-    --color3: black;
-    --color4: blue;
-    --color5: orange;
-    --color6: purple;
+    --color2: khaki;
+    --color3: white;
+    --color4: lime;
+    --color5: gold;
+    --color6: mediumseagreen;
     --y: -30vmin;
     --x: -50%;
     --initialY: 60vmin;
@@ -139,12 +139,11 @@
     --finalSize: 35vmin;
     left: 70%;
     top: 60%;
-    animation-delay: -0.4s;
+    animation-delay: -0.5s;
   }
 </style>
 <title>Mapeando</title>
 <link rel="stylesheet" href="/css/styles.css">
-<link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <main>
@@ -483,7 +482,7 @@
           <div class="row">
             <center>
               <div class="col-sm-6">
-                <h1>Opciones</h1>
+                <h1 style="color:#ffff">Opciones</h1>
                 <p></p>
                 <button id="fireworksButton" class="btn btn-outline-success">Finalizar</button>
                 <p></p>
@@ -500,10 +499,10 @@
             <div class="row">
               <center>
                 <div class="col-sm-6">
-                  <h1>Mapa</h1>
+                  <h1 style="color:#ffff">Mapa</h1>
                   <svg width="1000" height="1400" id="entorno">
                     <g id="fondo">
-                      <image xlink:href="img/MAPEANDO/MAPA FONDO.png" width="600" height="600" x="0" y="0"></image>
+                      <image xlink:href="img/MAPEANDO/MAPA FONDO1.png" width="600" height="600" x="0" y="0"></image>
                     </g>
                       <g class="padre" id="0"> <image xlink:href="img/agt/1.png"  class="movil"></g>
                       <g class="padre" id="1"> <image xlink:href="img/agt/2.png"  class="movil"></g>
@@ -537,7 +536,7 @@
               <center>
                 <br>
               <div class="col-md-6">
-                <h1>Original</h1>
+                <h1 style="color:#ffff">Original</h1>
                 <br><br>
                 <img src="img/MAPEANDO/MAPA.png" class="img-fluid">
               </div>
