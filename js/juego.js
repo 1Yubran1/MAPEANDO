@@ -4,7 +4,6 @@ var tamHeight = [190, 195, 200, 360, 130, 20,  95, 80, 80, 110, 120, 135, 150, 5
 var posicionesInicialesX = [0,   200, 400, 600, 800, 0,   200, 400, 600, 800,    0,  200,  400,  600,  800,    0,  200,  400,  600,  800,  200,  600];
 var posicionesInicialesY = [600, 600, 600, 600, 600, 800, 800, 800, 800, 800, 1000, 1000, 1000, 1000, 1000, 1200, 1200, 1200, 1200, 1200, 1300, 1300];
 
-
 for (var i = 0; i < piezas.length; i++) {
   piezas[i].setAttribute("width", tamWidth[i]);
   piezas[i].setAttribute("height", tamHeight[i]);
@@ -96,4 +95,30 @@ function testing() {
   if (bienUbicada === 10) {
     confeti[0].play();
   }
+}
+
+// Definir la variable para controlar si el modal ya se ha mostrado
+var modalMostrado = false;
+
+// Escuchar el evento de deselección de la imagen
+document.addEventListener("mouseup", function(evt) {
+  // Verificar si el evento ocurrió fuera de la imagen
+  if (evt.target.classList.contains('movil')) {
+    // Si el modal aún no se ha mostrado, mostrar el modal
+    if (!modalMostrado) {
+      mostrarModal();
+      modalMostrado = true; // Establecer la bandera a true para indicar que el modal se ha mostrado
+    }
+  }
+});
+
+// Función para mostrar el modal
+function mostrarModal() {
+  var modal = new bootstrap.Modal(document.getElementById('completadoModal'));
+  modal.show();
+
+  // Agregar un evento al modal para restablecer la bandera cuando se cierre el modal
+  modal.addEventListener('hidden.bs.modal', function () {
+    modalMostrado = false; // Establecer la bandera a false cuando se cierre el modal
+  });
 }

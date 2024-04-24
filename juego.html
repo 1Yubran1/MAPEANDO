@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,13 +17,29 @@
 </head>
 <body>
     <main>
+      <div class="container">
+        <!-- Aquí agregar el modal -->
+        <div class="modal fade" id="completadoModal" tabindex="-1" aria-labelledby="completadoModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="completadoModalLabel">¡Rompecabezas completado!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <img src="MAPEANDO/m4.png" class="img-fluid" alt="Imagen completada">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
         <div class="container">
           <div class="row">
             <center>
               <div class="col-sm-6">
                 <h1>Opciones</h1>
                 <p></p>
-                <a href="confetti.js" class="btn btn-outline-success">Finalizar</a>
+                <a href="" class="btn btn-outline-success">Finalizar</a>
                 <p></p>
                 <a href="juego.html" class="btn btn-outline-warning">Reiniciar</a>
                 <p></p>
