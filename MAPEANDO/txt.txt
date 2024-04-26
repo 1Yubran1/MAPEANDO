@@ -1,0 +1,3 @@
+primero imagen
+segundo mapa
+tercero botones
