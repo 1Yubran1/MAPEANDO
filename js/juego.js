@@ -14,12 +14,6 @@ for (var i = 0; i < piezas.length; i++) {
   });
 }
 
-var elementSelect = null;
-var currentX = 0;
-var currentY = 0;
-var currentPosX = 0;
-var currentPosY = 0;
-
 function seleccionarElemento(evt) {
   elementSelect = evt.target;
   currentX = evt.touches[0].clientX; // Modificación aquí
