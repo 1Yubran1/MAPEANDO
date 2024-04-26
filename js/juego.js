@@ -9,7 +9,7 @@ for (var i = 0; i < piezas.length; i++) {
   piezas[i].setAttribute("height", tamHeight[i]);
   piezas[i].setAttribute("x", posicionesInicialesX[i]);
   piezas[i].setAttribute("y", posicionesInicialesY[i]);
-  piezas[i].addEventListener("mousedown", function(evt) {
+  piezas[i].addEventListener("touchstart", function(evt) { // Modificación aquí
     seleccionarElemento(evt);
   });
 }
@@ -22,28 +22,28 @@ var currentPosY = 0;
 
 function seleccionarElemento(evt) {
   elementSelect = evt.target;
-  currentX = evt.clientX;
-  currentY = evt.clientY;
+  currentX = evt.touches[0].clientX; // Modificación aquí
+  currentY = evt.touches[0].clientY; // Modificación aquí
   currentPosX = parseFloat(elementSelect.getAttribute("x"));
   currentPosY = parseFloat(elementSelect.getAttribute("y"));
-  elementSelect.addEventListener("mousemove", function(evt) {
+  elementSelect.addEventListener("touchmove", function(evt) { // Modificación aquí
     moverElemento(evt);
   });
-  elementSelect.addEventListener("mouseup", function(evt) {
+  elementSelect.addEventListener("touchend", function(evt) { // Modificación aquí
     deseleccionarElemento(evt);
   });
 }
 
 function moverElemento(evt) {
   if (elementSelect) {
-    var dx = evt.clientX - currentX;
-    var dy = evt.clientY - currentY;
+    var dx = evt.touches[0].clientX - currentX; // Modificación aquí
+    var dy = evt.touches[0].clientY - currentY; // Modificación aquí
     currentPosX += dx;
     currentPosY += dy;
     elementSelect.setAttribute("x", currentPosX);
     elementSelect.setAttribute("y", currentPosY);
-    currentX = evt.clientX;
-    currentY = evt.clientY;
+    currentX = evt.touches[0].clientX; // Modificación aquí
+    currentY = evt.touches[0].clientY; // Modificación aquí
 
     // Reproducir el sonido
     var sound = document.getElementById("sound");
@@ -52,11 +52,10 @@ function moverElemento(evt) {
   }
 }
 
-
 function deseleccionarElemento(evt) {
   if (elementSelect) {
-    elementSelect.removeEventListener("mousemove", moverElemento);
-    elementSelect.removeEventListener("mouseup", deseleccionarElemento);
+    elementSelect.removeEventListener("touchmove", moverElemento); // Modificación aquí
+    elementSelect.removeEventListener("touchend", deseleccionarElemento); // Modificación aquí
     elementSelect = null;
     iman(); // Llamar a la función iman() después de soltar el elemento
   }
