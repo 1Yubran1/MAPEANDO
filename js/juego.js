@@ -44,8 +44,14 @@ function moverElemento(evt) {
     elementSelect.setAttribute("y", currentPosY);
     currentX = evt.clientX;
     currentY = evt.clientY;
+
+    // Reproducir el sonido
+    var sound = document.getElementById("sound");
+    sound.currentTime = 0; // Reiniciar el sonido para que pueda reproducirse nuevamente
+    sound.play();
   }
 }
+
 
 function deseleccionarElemento(evt) {
   if (elementSelect) {
