@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<audio id="backgroundAudio" loop>
+  <source src="game-bonus-144751.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
 <style>
   /* Estilo para el cuerpo de la página */
   body {
@@ -146,7 +150,6 @@
 <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-  <audio id="sound2" src="mp3/game-bonus-144751.mp3"></audio>
     <main>
       <div class="container">
         <div class="row">
@@ -578,11 +581,7 @@
     </footer>
 </body>
 <script src="js/juego.js"></script>
-<script>
- var sound = document.getElementById("sound2");
-    sound.currentTime = 0; // Reiniciar el sonido para que pueda reproducirse nuevamente
-    sound.play();
-</script>
+
 <script>
   document.getElementById('fireworksButton').addEventListener('click', function() {
     // Crear los fuegos artificiales
