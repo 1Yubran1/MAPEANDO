@@ -146,6 +146,7 @@
 <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
+  <audio id="sound2" src="mp3/game-bonus-144751.mp3"></audio>
     <main>
       <div class="container">
         <div class="row">
@@ -577,6 +578,11 @@
     </footer>
 </body>
 <script src="js/juego.js"></script>
+<script>
+ var sound = document.getElementById("sound2");
+    sound.currentTime = 0; // Reiniciar el sonido para que pueda reproducirse nuevamente
+    sound.play();
+</script>
 <script>
   document.getElementById('fireworksButton').addEventListener('click', function() {
     // Crear los fuegos artificiales
