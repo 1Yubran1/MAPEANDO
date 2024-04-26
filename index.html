@@ -40,6 +40,7 @@
               </div>
           </div>
         
+          <audio id="sound1" src="ruta/a/tu/primer/archivo_de_sonido.mp3"></audio>
           
           <!-- Modales -->        
           <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
@@ -153,4 +154,9 @@
     
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script>
+  var sound = document.getElementById("sound");
+    sound.currentTime = 0; // Reiniciar el sonido para que pueda reproducirse nuevamente
+    sound.play();
+</script>
 </html>
