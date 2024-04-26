@@ -104,19 +104,30 @@ function testing() {
 }
 
 
- // Espera a que el DOM esté completamente cargado
- document.addEventListener('DOMContentLoaded', function () {
+// Espera a que el DOM esté completamente cargado
+document.addEventListener('DOMContentLoaded', function () {
   // Obtiene una lista de todos los elementos <g> con la clase "padre"
   var gElements = document.querySelectorAll('.padre');
 
   // Itera sobre todos los elementos <g>
   gElements.forEach(function (element, index) {
-    // Agrega un evento de clic a cada elemento <g>
-    element.addEventListener('click', function () {
-      // Muestra el modal correspondiente según el índice del elemento
-      var modalId = "completadoModal" + (index + 1);
-      var modal = new bootstrap.Modal(document.getElementById(modalId));
-      modal.show();
-    });
+    // Agrega un evento de clic o de touchstart dependiendo del tipo de dispositivo
+    if (window.matchMedia("(pointer: coarse)").matches) {
+      // Dispositivo táctil, agrega un evento de touchstart
+      element.addEventListener('touchstart', function () {
+        // Muestra el modal correspondiente según el índice del elemento
+        var modalId = "completadoModal" + (index + 1);
+        var modal = new bootstrap.Modal(document.getElementById(modalId));
+        modal.show();
+      });
+    } else {
+      // Dispositivo con mouse, agrega un evento de click
+      element.addEventListener('click', function () {
+        // Muestra el modal correspondiente según el índice del elemento
+        var modalId = "completadoModal" + (index + 1);
+        var modal = new bootstrap.Modal(document.getElementById(modalId));
+        modal.show();
+      });
+    }
   });
 });
