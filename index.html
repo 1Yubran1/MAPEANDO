@@ -41,154 +41,174 @@
               </div>
           </div>
         
-          <!--
-            <audio id="sound1" src="ruta/a/tu/primer/archivo_de_sonido.mp3"></audio>
-          -->
-          <audio id="audio" style="display: none;">
-            <source src="mp3/multi-pop-1-188165.mp3" type="audio/mpeg">
-            Tu navegador no soporta la reproducción de audio.
-          </audio>
-          <!-- Modales -->        
-          <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalToggleLabel">¿Qué es MAPEANDO ANDO?</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <img src="MAPEANDO/Mapeando.png" class="img-fluid">
-                </div>
-                <div class="modal-footer">
-                  <img src="MAPEANDO/flecha2.png" class="img-btn" width="100px" height="50px" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal" id="playButton">
-                </div>
-              </div>
-            </div>
-          </div>
+          <!-- Audio en el footer -->
+<audio id="audio" style="display: none;">
+  <source src="mp3/multi-pop-1-188165.mp3" type="audio/mpeg">
+  Tu navegador no soporta la reproducción de audio.
+</audio>
 
-          <div class="modal fade" id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel3" tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalToggleLabel">¿Qué son las AGTs?</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <img src="MAPEANDO/Que son las AGTS 1.png" class="img-fluid">
-                </div>
-                <div class="modal-footer d-flex justify-content-between">
-                  <img src="MAPEANDO/flecha2 - copia.png" class="img-btn" width="100px" height="50px" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" id="playButton1">
-                  <img src="MAPEANDO/flecha2.png" class="img-btn" width="100px" height="50px" data-bs-target="#exampleModalToggle4" data-bs-toggle="modal" id="playButton2">
-                </div>
-              </div>
-            </div>
-          </div>
+<!-- Modal 1 -->
+<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">¿Qué es MAPEANDO ANDO?</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="MAPEANDO/Mapeando.png" class="img-fluid">
+      </div>
+      <div class="modal-footer">
+        <!-- Botón de reproducción en el footer -->
+        <img src="MAPEANDO/flecha2.png" class="img-btn playButton" width="100px" height="50px" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">
+      </div>
+    </div>
+  </div>
+</div>
 
-          <div class="modal fade" id="exampleModalToggle4" aria-hidden="true" aria-labelledby="exampleModalToggleLabel4" tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalToggleLabel">¿Qué son las AGTs?</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <img src="MAPEANDO/Que son las AGTS 2.png" class="img-fluid">
-                </div>
-                <div class="modal-footer d-flex justify-content-between">
-                  <img src="MAPEANDO/flecha2 - copia.png" class="img-btn" width="100px" height="50px" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal" id="playButton3">
-                  <img src="MAPEANDO/flecha2.png" class="img-btn" width="100px" height="50px" data-bs-target="#exampleModalToggle5" data-bs-toggle="modal" id="playButton4">
-                </div>
-              </div>
-            </div>
-          </div>
+<!-- Modal 2 -->
+<div class="modal fade" id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel3" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">¿Qué son las AGTs?</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="MAPEANDO/Que son las AGTS 1.png" class="img-fluid">
+      </div>
+      <div class="modal-footer d-flex justify-content-between">
+        <!-- Botones de reproducción en el footer -->
+        <img src="MAPEANDO/flecha2 - copia.png" class="img-btn playButton" width="100px" height="50px" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
+        <img src="MAPEANDO/flecha2.png" class="img-btn playButton" width="100px" height="50px" data-bs-target="#exampleModalToggle4" data-bs-toggle="modal">
+      </div>
+    </div>
+  </div>
+</div>
 
-          <div class="modal fade" id="exampleModalToggle5" aria-hidden="true" aria-labelledby="exampleModalToggleLabel5" tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalToggleLabel">¿Qué son las AGTs?</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <img src="MAPEANDO/Que son las AGTS 3.png" class="img-fluid">
-                </div>
-                <div class="modal-footer d-flex justify-content-between">
-                  <img src="MAPEANDO/flecha2 - copia.png" class="img-btn" width="100px" height="50px" data-bs-target="#exampleModalToggle4" data-bs-toggle="modal" id="playButton5">
-                  <img src="MAPEANDO/flecha2.png" class="img-btn" width="100px" height="50px" data-bs-target="#exampleModalToggle6" data-bs-toggle="modal" id="playButton6">
-                </div>
-              </div>
-            </div>
-          </div>
+<!-- Modal 3 -->
+<div class="modal fade" id="exampleModalToggle4" aria-hidden="true" aria-labelledby="exampleModalToggleLabel4" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">¿Qué son las AGTs?</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="MAPEANDO/Que son las AGTS 2.png" class="img-fluid">
+      </div>
+      <div class="modal-footer d-flex justify-content-between">
+        <!-- Botones de reproducción en el footer -->
+        <img src="MAPEANDO/flecha2 - copia.png" class="img-btn playButton" width="100px" height="50px" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">
+        <img src="MAPEANDO/flecha2.png" class="img-btn playButton" width="100px" height="50px" data-bs-target="#exampleModalToggle5" data-bs-toggle="modal">
+      </div>
+    </div>
+  </div>
+</div>
 
-          <div class="modal fade" id="exampleModalToggle6" aria-hidden="true" aria-labelledby="exampleModalToggleLabel6" tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalToggleLabel">AGTs</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <img src="MAPEANDO/22 AGTS.png" class="img-fluid">
-                </div>
-                <div class="modal-footer d-flex justify-content-between">
-                  <img src="MAPEANDO/flecha2 - copia.png" class="img-btn" width="100px" height="50px" data-bs-target="#exampleModalToggle5" data-bs-toggle="modal" id="playButton7">
-                  <img src="MAPEANDO/flecha2.png" class="img-btn" width="100px" height="50px" data-bs-target="#exampleModalToggle7" data-bs-toggle="modal" id="playButton8">
-                </div>
-              </div>
-            </div>
-          </div>
+<!-- Modal 4 -->
+<div class="modal fade" id="exampleModalToggle5" aria-hidden="true" aria-labelledby="exampleModalToggleLabel5" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">¿Qué son las AGTs?</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="MAPEANDO/Que son las AGTS 3.png" class="img-fluid">
+      </div>
+      <div class="modal-footer d-flex justify-content-between">
+        <!-- Botones de reproducción en el footer -->
+        <img src="MAPEANDO/flecha2 - copia.png" class="img-btn playButton" width="100px" height="50px" data-bs-target="#exampleModalToggle4" data-bs-toggle="modal">
+        <img src="MAPEANDO/flecha2.png" class="img-btn playButton" width="100px" height="50px" data-bs-target="#exampleModalToggle6" data-bs-toggle="modal">
+      </div>
+    </div>
+  </div>
+</div>
 
-          <div class="modal fade" id="exampleModalToggle7" aria-hidden="true" aria-labelledby="exampleModalToggleLabel7" tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalToggleLabel">¿Cómo jugar?</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <img src="MAPEANDO/como jugar.png" class="img-fluid">
-                </div>
-                <div class="modal-footer d-flex justify-content-between">
-                  <img src="MAPEANDO/flecha2 - copia.png" class="img-btn" width="100px" height="50px" data-bs-target="#exampleModalToggle6" data-bs-toggle="modal" id="playButton9">
-                  <img src="MAPEANDO/flecha2.png" class="img-btn" width="100px" height="50px" data-bs-target="#exampleModalToggle8" data-bs-toggle="modal" id="playButton10">
-                </div>
-              </div>
-            </div>
-          </div>
+<!-- Modal 5 -->
+<div class="modal fade" id="exampleModalToggle6" aria-hidden="true" aria-labelledby="exampleModalToggleLabel6" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">AGTs</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="MAPEANDO/22 AGTS.png" class="img-fluid">
+      </div>
+      <div class="modal-footer d-flex justify-content-between">
+        <!-- Botones de reproducción en el footer -->
+        <img src="MAPEANDO/flecha2 - copia.png" class="img-btn playButton" width="100px" height="50px" data-bs-target="#exampleModalToggle5" data-bs-toggle="modal">
+        <img src="MAPEANDO/flecha2.png" class="img-btn playButton" width="100px" height="50px" data-bs-target="#exampleModalToggle7" data-bs-toggle="modal">
+      </div>
+    </div>
+  </div>
+</div>
 
-          <div class="modal fade" id="exampleModalToggle8" aria-hidden="true" aria-labelledby="exampleModalToggleLabel8" tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Instrucciones</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <img src="MAPEANDO/instrucciones1.png" class="img-fluid">
-                </div>
-                <div class="modal-footer d-flex justify-content-between">
-                  <img src="MAPEANDO/flecha2 - copia.png" class="img-btn" width="100px" height="50px" data-bs-target="#exampleModalToggle7" data-bs-toggle="modal" id="playButton11">
-                  <a href="juego.html"><img src="MAPEANDO/flecha2.png" class="img-btn" width="100px" height="50px" id="playButton12"></a>
-                </div>
-              </div>
-            </div>
-          </div>
+<!-- Modal 6 -->
+<div class="modal fade" id="exampleModalToggle7" aria-hidden="true" aria-labelledby="exampleModalToggleLabel7" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">¿Cómo jugar?</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="MAPEANDO/como jugar.png" class="img-fluid">
+      </div>
+      <div class="modal-footer d-flex justify-content-between">
+        <!-- Botones de reproducción en el footer -->
+        <img src="MAPEANDO/flecha2 - copia.png" class="img-btn playButton" width="100px" height="50px" data-bs-target="#exampleModalToggle6" data-bs-toggle="modal">
+        <img src="MAPEANDO/flecha2.png" class="img-btn playButton" width="100px" height="50px" data-bs-target="#exampleModalToggle8" data-bs-toggle="modal">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 7 -->
+<div class="modal fade" id="exampleModalToggle8" aria-hidden="true" aria-labelledby="exampleModalToggleLabel8" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Instrucciones</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="MAPEANDO/instrucciones1.png" class="img-fluid">
+      </div>
+      <div class="modal-footer d-flex justify-content-between">
+        <!-- Botones de reproducción en el footer -->
+        <img src="MAPEANDO/flecha2 - copia.png" class="img-btn playButton" width="100px" height="50px" data-bs-target="#exampleModalToggle7" data-bs-toggle="modal">
+        <a href="juego.html"><img src="MAPEANDO/flecha2.png" class="img-btn playButton" width="100px" height="50px"></a>
+      </div>
+    </div>
+  </div>
+</div>
         
     </main>
     
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script>
-  // Obtén la referencia al elemento de audio
-  const audio = document.getElementById('audio');
+  // Función para reproducir el audio
+  function reproducirAudio() {
+    // Obtén la referencia al elemento de audio
+    const audio = document.getElementById('audio');
 
-  // Obtén la referencia al botón de reproducción dentro del modal
-  const playButton = document.getElementById('playButton');
-
-  // Agrega un controlador de eventos de clic al botón de reproducción dentro del modal
-  playButton.addEventListener('click', function() {
     // Reproduce el archivo de audio
     audio.play();
+  }
+
+  // Obtén una lista de todos los botones de reproducción dentro de los modales
+  const playButtons = document.querySelectorAll('.playButton');
+
+  // Agrega un controlador de eventos de clic a cada botón de reproducción
+  playButtons.forEach(function(button) {
+    button.addEventListener('click', function() {
+      // Reproduce el archivo de audio
+      reproducirAudio();
+    });
   });
 </script>
 </html>
