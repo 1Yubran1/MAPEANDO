@@ -19,6 +19,26 @@
     overflow: hidden;*/
   }
 
+  /* Estilo para el contenedor de felicitaciones */
+.felicidades {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation: fade-in 2s ease forwards;
+}
+
+/* Animación de desvanecimiento */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
   @keyframes firework {
     0% { transform: translate(var(--x), var(--initialY)); width: var(--initialSize); opacity: 1; }
     50% { width: 0.5vmin; opacity: 1; }
@@ -32,17 +52,17 @@
     --initialSize: 0.5vmin;
     --finalSize: 45vmin;
     --particleSize: 0.3vmin;
-    --color1: yellow;
-    --color2: khaki;
-    --color3: white;
-    --color4: lime;
-    --color5: gold;
-    --color6: mediumseagreen;
+    --color1: blue;
+    --color2: red;
+    --color3: black;
+    --color4: green;
+    --color5: purple;
+    --color6: yellow;
     --y: -30vmin;
     --x: -50%;
     --initialY: 60vmin;
     content: "";
-    animation: firework 2s infinite;
+    animation: firework 3s infinite;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -110,12 +130,12 @@
   .firework:nth-child(2),
   .firework:nth-child(2)::before,
   .firework:nth-child(2)::after {
-    --color1: pink;
-    --color2: violet;
-    --color3: fuchsia;
-    --color4: orchid;
-    --color5: plum;
-    --color6: lavender;  
+    --color1: orange;
+    --color2: purple;
+    --color3: SkyBlue;
+    --color4: green;
+    --color5: red;
+    --color6: brown;  
     --finalSize: 40vmin;
     left: 30%;
     top: 60%;
@@ -130,12 +150,12 @@
   .firework:nth-child(3),
   .firework:nth-child(3)::before,
   .firework:nth-child(3)::after {
-    --color1: cyan;
-    --color2: lightcyan;
-    --color3: lightblue;
-    --color4: PaleTurquoise;
-    --color5: SkyBlue;
-    --color6: lavender;
+    --color1: rgb(179, 255, 0);
+    --color2: rgb(233, 224, 255);
+    --color3: rgb(230, 207, 173);
+    --color4: rgb(175, 223, 238);
+    --color5: rgb(47, 123, 153);
+    --color6: rgb(211, 159, 90);
     --finalSize: 35vmin;
     left: 70%;
     top: 60%;
@@ -145,13 +165,13 @@
 <title>Mapeando</title>
 <link rel="stylesheet" href="/css/styles.css">
 </head>
-<body>
+<body>  
   <audio id="backgroundMusic" src="mp3/Y2meta.app - Cute Avalanche _ RKVC _ Música para Niños _ Sin Copyright (320 kbps).mp3" autoplay loop></audio>
     <main>
       <div class="container">
         <center>
           <h1>Mapa</h1>
-          <div id="tiempoTranscurrido">Tiempo transcurrido: 0 segundos</div>
+          <div id="tiempoTranscurrido"><h3>Tiempo transcurrido: 0 segundos</h3></div>
         </center>
             <div class="row">
               <div class="col-sm-6">
@@ -159,7 +179,7 @@
                 <img src="img/MAPEANDO/MAPA1.png" class="img-thumbnail" alt="..." width="200px" height="200px">
               </div>
                   <br><br>
-                  <center>
+                <center>
                   <audio id="sound" src="mp3/multi-pop-1-188165.mp3"></audio>
                   <svg width="1000" height="1300" id="entorno">
                     <g id="fondo">
@@ -191,8 +211,8 @@
                       <g class="padre" id="21"><image xlink:href="img/agt/26.png" class="movil"></g>
                       <g class="padre" id="21"><image xlink:href="img/agt/27.png" class="movil"></g>
                   </svg>
+                </center>
                 </div>
-              </center>
             </div>
             <div class="modal fade" id="completadoModal1" tabindex="0" aria-labelledby="completadoModalLabel1" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
@@ -554,6 +574,9 @@
                   <h1>Opciones</h1>
                   <br>
                     <p></p>
+                    <div id="felicidades" class="felicidades">
+                      <h3>Felicidades!</h3>
+                    </div>
                     <button id="fireworksButton" class="btn btn-success btn-lg">Finalizar</button>
                     <p></p>
                     <p></p>
@@ -583,7 +606,7 @@
     var fireworksContainer = document.createElement('div');
     fireworksContainer.classList.add('firework');
 
-    var fireworksCount = 50; // Cantidad de fuegos artificiales
+    var fireworksCount = 60; // Cantidad de fuegos artificiales
 
     // Crear los fuegos artificiales y agregarlos al contenedor
     for (var i = 0; i < fireworksCount; i++) {

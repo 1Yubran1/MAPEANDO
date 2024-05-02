@@ -6,6 +6,33 @@ var posicionesInicialesY = [600, 600, 600, 600, 600, 800, 800, 800, 800, 800, 80
 var tiempoInicio; // Variable para almacenar el tiempo de inicio
 var tiempoTranscurrido = 0; // Variable para almacenar el tiempo transcurrido
 var intervalID; // Variable para almacenar el ID del intervalo
+// Obtener referencia al botón y al contenedor de felicitaciones
+var fireworksButton = document.getElementById("fireworksButton");
+var felicidadesContainer = document.getElementById("felicidades");
+
+// Agregar un event listener al botón "Finalizar"
+fireworksButton.addEventListener("click", function() {
+  // Mostrar los fuegos artificiales
+  mostrarFuegosArtificiales();
+  // Mostrar el mensaje de felicitaciones con un retraso de 1 segundo
+  setTimeout(function() {
+    mostrarFelicidades();
+  }, 1000);
+});
+
+// Función para mostrar los fuegos artificiales
+function mostrarFuegosArtificiales() {
+  var fireworks = document.getElementsByClassName("firework");
+  for (var i = 0; i < fireworks.length; i++) {
+    fireworks[i].style.display = "block";
+  }
+}
+
+// Función para mostrar el mensaje de felicitaciones
+function mostrarFelicidades() {
+  felicidadesContainer.style.display = "block";
+}
+
 
 // Función para iniciar el contador de tiempo
 function iniciarContador() {
@@ -25,10 +52,11 @@ function actualizarTiempo() {
   var segundos = tiempoTotalSegundos % 60;
 
   // Formatea el tiempo transcurrido
-  var tiempoFormateado = minutos + " minutos y " + segundos + " segundos";
+var tiempoFormateado = minutos + " minutos y " + segundos + " segundos";
 
-  // Actualiza el contenido del elemento HTML con el tiempo formateado
-  document.getElementById("tiempoTranscurrido").textContent = "Tiempo transcurrido: " + tiempoFormateado;
+// Actualiza el contenido del elemento HTML con el tiempo formateado
+document.getElementById("tiempoTranscurrido").innerHTML = "<h3>Tiempo transcurrido: " + tiempoFormateado + "</h3>";
+
 }
 
 // Llama a la función iniciarContador() para comenzar a medir el tiempo
