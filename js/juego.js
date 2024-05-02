@@ -3,6 +3,43 @@ var tamWidth  = [190, 195, 200, 400, 130, 20, 100, 80, 80, 120, 120, 135, 150, 5
 var tamHeight = [190, 195, 200, 360, 130, 20,  95, 80, 80, 110, 120, 135, 150, 50, 130, 70, 60, 60, 100, 60, 130, 35, 24, 15, 70];
 var posicionesInicialesX = [0,   200, 400, 550, 800, 0,   50,  150, 250, 350, 450, 550,  0,  150, 200, 350, 450, 550, 650, 750, 200, 850, 0,    50,   100];
 var posicionesInicialesY = [600, 600, 600, 600, 600, 800, 800, 800, 800, 800, 800, 800, 900, 900, 900, 950, 950, 950, 950, 950, 980, 950, 1100, 1100, 1100];
+var tiempoInicio; // Variable para almacenar el tiempo de inicio
+var tiempoTranscurrido = 0; // Variable para almacenar el tiempo transcurrido
+var intervalID; // Variable para almacenar el ID del intervalo
+
+// Función para iniciar el contador de tiempo
+function iniciarContador() {
+  tiempoInicio = Date.now(); // Obtiene el tiempo actual en milisegundos
+  // Ejecuta la función actualizarTiempo cada segundo (1000 milisegundos)
+  intervalID = setInterval(actualizarTiempo, 1000);
+}
+
+// Función para actualizar el tiempo transcurrido y mostrarlo en la página en minutos y segundos
+function actualizarTiempo() {
+  // Calcula el tiempo transcurrido desde el inicio
+  var tiempoActual = Date.now();
+  var tiempoTotalSegundos = Math.floor((tiempoActual - tiempoInicio) / 1000); // Convierte a segundos
+
+  // Calcula los minutos y los segundos
+  var minutos = Math.floor(tiempoTotalSegundos / 60);
+  var segundos = tiempoTotalSegundos % 60;
+
+  // Formatea el tiempo transcurrido
+  var tiempoFormateado = minutos + " minutos y " + segundos + " segundos";
+
+  // Actualiza el contenido del elemento HTML con el tiempo formateado
+  document.getElementById("tiempoTranscurrido").textContent = "Tiempo transcurrido: " + tiempoFormateado;
+}
+
+// Llama a la función iniciarContador() para comenzar a medir el tiempo
+iniciarContador();
+
+// Agrega un event listener al botón "Finalizar" para detener el contador de tiempo
+document.getElementById("fireworksButton").addEventListener("click", function() {
+  clearInterval(intervalID); // Detiene el intervalo
+});
+
+
 
 for (var i = 0; i < piezas.length; i++) {
   piezas[i].setAttribute("width", tamWidth[i]);
@@ -101,7 +138,6 @@ function testing() {
  document.addEventListener('DOMContentLoaded', function () {
   // Obtiene una lista de todos los elementos <g> con la clase "padre"
   var gElements = document.querySelectorAll('.padre');
-
   // Itera sobre todos los elementos <g>
   gElements.forEach(function (element, index) {
     // Agrega un evento de clic a cada elemento <g>
