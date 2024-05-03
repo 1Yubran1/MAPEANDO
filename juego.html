@@ -19,25 +19,6 @@
     overflow: hidden;*/
   }
 
-  /* Estilo para el contenedor de felicitaciones */
-.felicidades {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  animation: fade-in 2s ease forwards;
-}
-
-/* Animación de desvanecimiento */
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 
   @keyframes firework {
     0% { transform: translate(var(--x), var(--initialY)); width: var(--initialSize); opacity: 1; }
@@ -170,6 +151,7 @@
     <main>
       <div class="container">
         <center>
+          <br><br><br>
           <h1>Mapa</h1>
           <div id="tiempoTranscurrido"><h3>Tiempo transcurrido: 0 segundos</h3></div>
         </center>
@@ -574,9 +556,7 @@
                   <h1>Opciones</h1>
                   <br>
                     <p></p>
-                    <div id="felicidades" class="felicidades">
-                      <h3>Felicidades!</h3>
-                    </div>
+                    
                     <button id="fireworksButton" class="btn btn-success btn-lg">Finalizar</button>
                     <p></p>
                     <p></p>
@@ -606,6 +586,15 @@
     var fireworksContainer = document.createElement('div');
     fireworksContainer.classList.add('firework');
 
+    // Agregar el div de felicidades
+    var felicidadesDiv = document.createElement('div');
+    felicidadesDiv.id = 'felicidades';
+    felicidadesDiv.classList.add('felicidades');
+    var felicidadesHeading = document.createElement('h1');
+    felicidadesHeading.textContent = '¡Felicidades!';
+    felicidadesDiv.appendChild(felicidadesHeading);
+    fireworksContainer.appendChild(felicidadesDiv);
+
     var fireworksCount = 60; // Cantidad de fuegos artificiales
 
     // Crear los fuegos artificiales y agregarlos al contenedor
@@ -624,5 +613,6 @@
     }, 3000); // Cambiar 3000 por el tiempo deseado en milisegundos
   }
 </script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </html>

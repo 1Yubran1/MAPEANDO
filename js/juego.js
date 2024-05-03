@@ -113,12 +113,18 @@ function moverElemento(evt) {
 
 function deseleccionarElemento(evt) {
   if (elementSelect) {
-    elementSelect.removeEventListener("touchmove", moverElemento); // Modificación aquí
-    elementSelect.removeEventListener("touchend", deseleccionarElemento); // Modificación aquí
+    elementSelect.removeEventListener("touchmove", moverElemento);
+    elementSelect.removeEventListener("touchend", deseleccionarElemento);
     elementSelect = null;
     iman(); // Llamar a la función iman() después de soltar el elemento
+
+    // Mostrar el modal al soltar la imagen
+    var modalId = "completadoModal" + elementSelect.getAttribute("id");
+    var modal = new bootstrap.Modal(document.getElementById(modalId));
+    modal.show();
   }
 }
+
 
 var entorno = document.getElementById('entorno');
 
