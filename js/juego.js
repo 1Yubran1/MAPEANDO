@@ -181,9 +181,19 @@ function testing() {
     });
   });
 });*/
+// Variable para almacenar los IDs de los modales que ya se han mostrado
+var modalesMostrados = [];
 
-var padres = document.querySelectorAll('.padre');
-padres.forEach(function(padre, index) {
-    var img = padre.querySelector('image');
-    img.setAttribute('data-modal-id', 'completadoModal' + (index + 1));
-});
+function deseleccionarElemento(evt) {
+  var elementoSuelto = evt.target; // Obtener el elemento soltado directamente del evento
+  if (elementoSuelto) {
+    var modalId = elementoSuelto.getAttribute("data-modal-id");
+    if (modalId && !modalesMostrados.includes(modalId)) {
+      // Mostrar el modal al soltar la imagen
+      var modal = new bootstrap.Modal(document.getElementById(modalId));
+      modal.show();
+      // Agregar el ID del modal a la lista de modales mostrados
+      modalesMostrados.push(modalId);
+    }
+  }
+}
