@@ -111,20 +111,18 @@ function moverElemento(evt) {
   }
 }
 
+// Función para deseleccionar el elemento y mostrar el modal correspondiente
 function deseleccionarElemento(evt) {
-  if (elementSelect) {
-    elementSelect.removeEventListener("touchmove", moverElemento);
-    elementSelect.removeEventListener("touchend", deseleccionarElemento);
-    elementSelect = null;
-    iman(); // Llamar a la función iman() después de soltar el elemento
-
-    // Mostrar el modal al soltar la imagen
-    var modalId = "completadoModal" + elementSelect.getAttribute("id");
-    var modal = new bootstrap.Modal(document.getElementById(modalId));
-    modal.show();
+  var elementoSuelto = evt.target; // Obtener el elemento soltado directamente del evento
+  if (elementoSuelto) {
+    var modalId = elementoSuelto.getAttribute("data-modal-id");
+    if (modalId) {
+      // Mostrar el modal al soltar la imagen
+      var modal = new bootstrap.Modal(document.getElementById(modalId));
+      modal.show();
+    }
   }
 }
-
 
 var entorno = document.getElementById('entorno');
 
@@ -167,7 +165,7 @@ function testing() {
   }
 }
 
-
+/*
  // Espera a que el DOM esté completamente cargado
  document.addEventListener('DOMContentLoaded', function () {
   // Obtiene una lista de todos los elementos <g> con la clase "padre"
@@ -182,4 +180,10 @@ function testing() {
       modal.show();
     });
   });
+});*/
+
+var padres = document.querySelectorAll('.padre');
+padres.forEach(function(padre, index) {
+    var img = padre.querySelector('image');
+    img.setAttribute('data-modal-id', 'completadoModal' + (index + 1));
 });
