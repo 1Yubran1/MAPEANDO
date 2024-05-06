@@ -25,7 +25,7 @@
     width: 20px; /* Ancho del rectángulo */
     height: 10px; /* Altura del rectángulo */
     position: absolute;
-    animation: fall 5s infinite linear; /* Animación de caída */
+    animation: fall 10s infinite linear; /* Animación de caída */
 }
 
 @keyframes fall {
