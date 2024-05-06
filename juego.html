@@ -625,8 +625,16 @@
 <script src="js/juego.js"></script>
 <script>
   document.getElementById('fireworksButton').addEventListener('click', function() {
+    // Deshabilitar el botón para evitar múltiples clics
+    this.disabled = true;
+
     // Crear los fuegos artificiales
     createFireworks();
+
+    // Habilitar el botón después de dos minutos
+    setTimeout(function() {
+      document.getElementById('fireworksButton').disabled = false;
+    }, 120000); // 120000 milisegundos = 2 minutos
   });
 
   function createFireworks() {
