@@ -1,8 +1,8 @@
 var piezas = document.getElementsByClassName('movil');
 var tamWidth  = [184, 195, 198, 410, 125, 15, 100, 75, 75, 120, 120, 135, 150, 50, 130, 70, 65, 70, 95, 55,  125, 30, 50, 15, 70];
 var tamHeight = [188, 195, 200, 358, 120, 20,  95, 80, 80, 110, 120, 135, 125, 50, 130, 70, 55, 60, 100, 60, 125, 30, 35, 15, 70];
-var posicionesInicialesX = [0,   200, 400, 0,   230, 300, 320, 400, 470,  0,    85,  300,   450,  0,    10,  100,  160,   210, 250,  350,   420,  450,  0,   50,  100];
-var posicionesInicialesY = [600, 600, 600, 800, 800, 800, 800, 800, 800, 1000, 1000, 1000, 1000, 1200, 1200, 1200, 1200, 1200, 1200, 1200, 1200, 1200, 1400, 1400, 1400];
+var posicionesInicialesX = [0,   200, 400, 0,   140, 300, 320, 400, 470,  0,   0  ,240, 400, 550, 500, 0,     0,  490, 290, 400, 400, 0,  0,   0,  100];
+var posicionesInicialesY = [500, 520, 450, 700, 650, 690, 650, 550, 500, 400, 850, 700, 620, 650, 700, 510, 700,  740, 800, 750, 800, 650, 770, 830, 910];
 var tiempoInicio; // Variable para almacenar el tiempo de inicio
 var tiempoTranscurrido = 0; // Variable para almacenar el tiempo transcurrido
 var intervalID; // Variable para almacenar el ID del intervalo
